@@ -1,0 +1,83 @@
+class: MilkyWayPotential
+components:
+- class: MiyamotoNagaiPotential
+  name: disk
+  parameters: !!python/object/apply:collections.OrderedDict
+  - - - m
+      - 68000000000.0
+    - - a
+      - 3.0
+    - - b
+      - 0.28
+    - - m_unit
+      - solMass
+    - - a_unit
+      - kpc
+    - - b_unit
+      - kpc
+  units:
+    angle: rad
+    angular speed: mas / yr
+    length: kpc
+    mass: solMass
+    speed: km / s
+    time: Myr
+- class: HernquistPotential
+  name: bulge
+  parameters: !!python/object/apply:collections.OrderedDict
+  - - - m
+      - 5000000000.0
+    - - c
+      - 1.0
+    - - m_unit
+      - solMass
+    - - c_unit
+      - kpc
+  units:
+    angle: rad
+    angular speed: mas / yr
+    length: kpc
+    mass: solMass
+    speed: km / s
+    time: Myr
+- class: HernquistPotential
+  name: nucleus
+  parameters: !!python/object/apply:collections.OrderedDict
+  - - - m
+      - 1710000000.0
+    - - c
+      - 0.07
+    - - m_unit
+      - solMass
+    - - c_unit
+      - kpc
+  units:
+    angle: rad
+    angular speed: mas / yr
+    length: kpc
+    mass: solMass
+    speed: km / s
+    time: Myr
+- class: NFWPotential
+  name: halo
+  parameters: !!python/object/apply:collections.OrderedDict
+  - - - m
+      - 600000000000.0
+    - - r_s
+      - 16.0
+    - - c
+      - 1.25
+    - - m_unit
+      - solMass
+    - - r_s_unit
+      - kpc
+    - - c_unit
+      - ''
+  units:
+    angle: rad
+    angular speed: mas / yr
+    length: kpc
+    mass: solMass
+    speed: km / s
+    time: Myr
+type: custom
